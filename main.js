@@ -41,8 +41,57 @@ const navbar = () => {
   renderToDom("#navBar", domString);
 };
 
+const footer = () => {
+  const domString = `
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+      <li><h6>2023 Gitsub, Inc.</h6>
+              </li>
+      <li class="nav-item">
+            <a class="nav-link" href="#">Terms</a>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">Privacy</a>
+              </li>
+      <li class="nav-item">
+            <a class="nav-link" href="#">Security</a>
+              </li>
+                <li class="nav-item"></li>
+            <a class="nav-link" href="#">Status</a>
+              </li>
+                <li class="nav-item"></li>
+            <a class="nav-link" href="#">Docs</a>
+              </li>
+                <li class="nav-item"></li>
+            <a class="nav-link" href="#">Contact Gitsub</a>
+              </li>
+                <li class="nav-item"></li>
+            <a class="nav-link" href="#">Pricing</a>
+              </li>
+                <li class="nav-item"></li>
+            <a class="nav-link" href="#">API</a>
+              </li>
+                <li class="nav-item"></li>
+            <a class="nav-link" href="#">Training</a>
+              </li>
+                <li class="nav-item"></li>
+            <a class="nav-link" href="#">Blog</a>
+              </li>
+                <li class="nav-item"></li>
+            <a class="nav-link" href="#">About</a>
+              </li>
+      </ul>
+    </div>
+  </div>
+</nav>`;
+
+  renderToDom("#footer", domString);
+};
+
 const startApp = () => {
   navbar();
+  footer();
 };
 
 startApp();

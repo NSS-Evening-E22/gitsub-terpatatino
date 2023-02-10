@@ -41,6 +41,7 @@ const navbar = () => {
   renderToDom("#navBar", domString);
 };
 
+
 const startApp = () => {
   navbar();
 };

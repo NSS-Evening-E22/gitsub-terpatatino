@@ -1,3 +1,41 @@
 body {
   background-color: aqua;
 }
+ /* this area bellow is all profile card styling */
+#profileBtn {
+
+}
+
+#profileStat {
+  font-size: 10px;
+}
+
+#pf-stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+ #contact-pf-stats {
+  font-size: 14px;
+  display: flex;
+  margin: 0px;
+ }
+
+#highlight {
+  font-size: 15px;
+  margin: 0px;
+}
+
+#org {
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+}
+
+#sponsor {
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+}
+
+  /* this area above is all profile card styling */

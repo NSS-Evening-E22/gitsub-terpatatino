@@ -1,3 +1,6 @@
+export { reposData, projectsData, packagesData};
+
+
 const reposData = [
   {
    id: 1,

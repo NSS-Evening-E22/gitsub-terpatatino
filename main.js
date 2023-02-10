@@ -1,6 +1,4 @@
-console.log("Hello everyone!");
-
-console.log("tori made a branch");
+import { packagesData, reposData, projectsData} from "./referenceData.js";
 
 //render to dom function
 const renderToDom = (divId, textToRender) => {
@@ -40,6 +38,26 @@ const navbar = () => {
 
   renderToDom("#navBar", domString);
 };
+
+const packagesCard = () => {
+  let domString = "";
+  packagesData.forEach((currentPackage) => {
+  domString += `
+  
+  <div class="card">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">${currentPackage.title}</h5>
+      <p class="card-text">${currentPackage.description}.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>`;
+    });
+  renderToDom("#existingPackages", domString);
+  };
+
 
 const footer = () => {
   const domString = `
@@ -92,6 +110,7 @@ const footer = () => {
 const startApp = () => {
   navbar();
   footer();
+  packagesCard();
 };
 
 startApp();

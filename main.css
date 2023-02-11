@@ -39,3 +39,7 @@ body {
 }
 
   /* this area above is all profile card styling */
+
+  #pinnedTitle {
+    color: white;
+  }

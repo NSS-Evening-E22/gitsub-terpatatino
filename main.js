@@ -206,7 +206,6 @@ const footer = () => {
 const startApp = () => {
   navbar();
   profileCard();
-  repoCardsOnDom();
   footer();
 };
 

@@ -143,23 +143,6 @@ document.addEventListener("submit", (e) => {
   form.reset();
 });
 
-const form = document.querySelector("#newProjectForm");
-document.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const newTitle = document.querySelector("#titleInput");
-  const newDescription = document.querySelector("#descriptionInput");
-
-  const newProject = {
-    id: projectsData.length + 1,
-    title: newTitle,
-    description: newDescription,
-    visibility: "private",
-  };
-  projectsData.unshift(newProject);
-  projectsCard();
-  form.reset();
-});
 
 
 

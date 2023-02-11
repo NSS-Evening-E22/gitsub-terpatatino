@@ -104,6 +104,26 @@ window.addEventListener("load", function () {
   }
 });
 
+const overviewCardsOnDom = () => {
+  let domString = ""
+  for (const repo of reposData) {
+    domString += `<div class="card" style="width: 18rem;" id='pinnedRepoCard'>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${repo.title}</li>
+      <li class="list-group-item">${repo.description}</li>
+      <li class="list-group-item">${repo.tags}</li>
+    </ul>
+  </div>`
+  }
+  renderToDom('#pinnedRepos', domString)
+}
+
+window.addEventListener("load", function () {
+  if (window.location.pathname === "/index.html") {
+    overviewCardsOnDom();
+  }
+});
+
 const profileCard = () => {
   let domString = `<div class="card" style="width: 18rem;">
   <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" class="card-img-top" alt="..." id='profileCardImg'>

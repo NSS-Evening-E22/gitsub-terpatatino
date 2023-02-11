@@ -41,6 +41,24 @@ const navbar = () => {
   renderToDom("#navBar", domString);
 };
 
+// loop through repo cards COME BACK TO THIS
+
+const repoCardsOnDom = () => {
+  let domString = "";
+  for (const repo of reposData) {
+    domString += `<div class="card text-bg-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header">"${repo.title}"</div>
+    <div class="card-body">
+      <h5 class="card-title">"${repo.tags}"</h5>
+      <p class="card-text">"${repo.description}"</p>
+    </div>
+  </div>`;
+  }
+
+  renderToDom("#existingRepos", domString);
+}
+
+
 const footer = () => {
   const domString = `
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -95,4 +113,3 @@ const startApp = () => {
 };
 
 startApp();
-

@@ -56,8 +56,31 @@ const packagesCard = () => {
   </div>`;
     });
   renderToDom("#existingPackages", domString);
-  };
+};
 
+window.addEventListener("load", function () {
+  if (window.location.pathname === "/packages.html") {
+    packagesCard();
+  }
+});
+
+const projectsCard = () => {
+  let domString = "";
+  projectsData.forEach((currentProject) => {
+    domString += `<div class="card">
+    <div class="card-body">
+      This is some text within a card body.
+    </div>
+  </div>`;
+  });
+  renderToDom("#existingProjects", domString);
+};
+
+window.addEventListener("load", function () {
+  if (window.location.pathname === "/projects.html") {
+    projectsCard();
+  }
+});
 
 const footer = () => {
   const domString = `
@@ -110,7 +133,6 @@ const footer = () => {
 const startApp = () => {
   navbar();
   footer();
-  packagesCard();
 };
 
 startApp();

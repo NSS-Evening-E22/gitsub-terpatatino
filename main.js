@@ -134,15 +134,32 @@ document.addEventListener("submit", (e) => {
 
   const newProject = {
     id: projectsData.length + 1,
-    title: newTitle,
-    description: newDescription,
+    title: newTitle.value,
+    description: newDescription.value,
     visibility: "private",
   };
   projectsData.unshift(newProject);
   projectsCard();
   form.reset();
-});
+}); 
 
+// const form = document.querySelector("#newProjectForm");
+// document.addEventListener("submit", (e) => {
+//   e.preventDefault();
+
+//   const newTitle = document.querySelector("#titleInput");
+//   const newDescription = document.querySelector("#descriptionInput");
+
+//   const newProject = {
+//     id: projectsData.length + 1,
+//     title: newTitle,
+//     description: newDescription,
+//     visibility: "private",
+//   };
+//   projectsData.unshift(newProject);
+//   projectsCard();
+//   form.reset();
+// });
 
 
 

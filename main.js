@@ -39,6 +39,57 @@ const navbar = () => {
   renderToDom("#navBar", domString);
 };
 
+const profileCard = () => {
+  let domString = `<div class="card" style="width: 18rem;">
+  <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" class="card-img-top" alt="..." id='profileCardImg'>
+  <div class="card-body">
+    <h5 class="card-title">John Johnson</h5>
+    <p class="card-text">Hello im John, a highly motivated individual coupled with strong technical abilities.</p>
+    <button id="profileBtn">Follow</button> <button id="profileBtn">Sponsor</button>
+      <div id="pf-stats">
+       <p id="profileStat">2.4k Followers</p>
+       <p id="profileStat">33 Following</p>
+       <p id="profileStat">63 Favorites</p>
+      </div>
+      <div id=pf-contact>
+        <p id="contact-pf-stats">Los Angeles, California</p>
+        <p id="contact-pf-stats">github@johnjohnson.com</p>
+        <p id="contact-pf-stats">http://wwwjohncodes.com</p>
+        <p id="contact-pf-stats">@johnthesavagecoder</p>
+      </div>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+     <h4>Highlights</h4>
+       <p id="highlight">Artic Code Vault Contributor</p>
+       <p id="highlight">GitHuub Star</p>
+        <p id="highlight">GitHub Pro</p>
+    </li>
+    <li class="list-group-item">
+      <h4>Organizations</h4>
+        <div id="org-img">
+          <img src="https://ichef.bbci.co.uk/images/ic/1920x1080/p03t1sm8.jpg" alt="" id="org">
+          <img src="https://thisisnotadvertising.files.wordpress.com/2012/02/tumblr_lpgq8fjbov1qfw54v.jpg" alt="" id="org">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5NDp6Gtg-cZXIPLqS76Ez9rk9xCo35m3LAg&usqp=CAU" alt="" id="org">
+        </div>
+    </li>
+    <li class="list-group-item">
+      <h4>Sponsors</h4>
+        <div id="spons-imgs">
+          <img src="https://media.istockphoto.com/id/119094519/photo/portrait-of-a-young-handsome-man.jpg?s=612x612&w=0&k=20&c=aVOPnsCkhlzgitekfgVVK4MdGGP8MaST83u-snJZv5Y=" alt="" id="sponsor">
+          <img src="https://burst.shopifycdn.com/photos/portrait-of-male-model.jpg?width=1200&format=pjpg&exif=1&iptc=1" alt="" id="sponsor">
+          <img src="https://media.istockphoto.com/photos/beautiful-middle-aged-woman-with-clean-wrinkled-skin-picture-id1310459525?b=1&k=20&m=1310459525&s=612x612&w=0&h=G6ynEpzATIgbVbUXJzXiQBkvYluEPAlCRNIJeP-fYHk=" alt="" id="sponsor">
+          <img src="https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvczUzLWFlLWFvbS0wMDkwMDYuanBn.jpg?s=Bow3j-xEjuHNmVV9WcE1CLH2b-bg7GuwtvDSrVPpnhk" alt="" id="sponsor">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/003/491/890/small/closeup-face-portrait-of-pretty-blonde-girl-with-fresh-skin-horizontal-image-free-photo.jpg" alt="" id="sponsor">
+          <img src="https://media.istockphoto.com/id/1165314753/photo/born-and-bred-in-the-city.jpg?s=612x612&w=0&k=20&c=YVgFueYMLeUg1rXNIJWtMmKOgb-8EHAgyzK9sPEaaiM=" alt="" id="sponsor">
+          <img src="https://media.istockphoto.com/photos/beauty-portrait-of-young-brunette-picture-id1309405105?b=1&k=20&m=1309405105&s=612x612&w=0&h=LqbVRuf1Y9BfeAv7z9witu0b2KAMpQNClOLt1hdxxDE=" alt="" id="sponsor">
+        </div>
+    </li>
+  </ul>
+</div>`
+renderToDom('#profile', domString)
+}
+
 const packagesCard = () => {
   let domString = "";
   packagesData.forEach((currentPackage) => {
@@ -127,9 +178,9 @@ const footer = () => {
 
 const startApp = () => {
   navbar();
+  profileCard();
   footer();
   packagesCard();
 };
 
 startApp();
-

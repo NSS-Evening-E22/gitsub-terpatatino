@@ -138,9 +138,17 @@ document.addEventListener("submit", (e) => {
     description: newDescription.value,
     visibility: "private",
   };
+
+  const reset = () => {
+    const box1 = document.getElementById("titleInput");
+    const box2 = document.getElementById("descriptionInput");
+    box1.value = "";
+    box2.value = "";
+  }
+
   projectsData.unshift(newProject);
   projectsCard();
-  
+  reset();
 }); 
 
 

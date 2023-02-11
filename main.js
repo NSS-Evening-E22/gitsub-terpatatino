@@ -98,6 +98,12 @@ const repoCardsOnDom = () => {
   renderToDom("#existingRepos", domString);
 };
 
+window.addEventListener("load", function () {
+  if (window.location.pathname === "/repositories.html") {
+    repoCardsOnDom();
+  }
+});
+
 const profileCard = () => {
   let domString = `<div class="card" style="width: 18rem;">
   <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" class="card-img-top" alt="..." id='profileCardImg'>
@@ -200,6 +206,7 @@ const footer = () => {
 const startApp = () => {
   navbar();
   profileCard();
+  repoCardsOnDom();
   footer();
 };
 

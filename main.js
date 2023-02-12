@@ -124,6 +124,8 @@ window.addEventListener("load", function () {
   }
 });
 
+
+
 const projectForm = document.querySelector("#newProjectForm");
 document.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -138,16 +140,9 @@ document.addEventListener("submit", (e) => {
     visibility: "private",
   };
 
-  const reset = () => {
-    const box1 = document.getElementById("titleInput");
-    const box2 = document.getElementById("descriptionInput");
-    box1.value = "";
-    box2.value = "";
-  };
-
   projectsData.unshift(newProject);
   projectsCard();
-  reset();
+  projectForm.reset();
 });
 
 const repoForm = document.querySelector("#newRepoForm");
@@ -164,16 +159,9 @@ document.addEventListener("submit", (e) => {
     tags: [],
   };
 
-  const reset = () => {
-    const box1 = document.getElementById("titleInput");
-    const box2 = document.getElementById("descriptionInput");
-    box1.value = "";
-    box2.value = "";
-  };
-
   reposData.unshift(newRepo);
   repoCardsOnDom();
-  reset();
+  repoForm.reset();
 });
 
 const packageForm = document.querySelector("#newPackageForm");
@@ -189,16 +177,9 @@ document.addEventListener("submit", (e) => {
     description: newDescription.value,
   };
 
-  const reset = () => {
-    const box1 = document.getElementById("titleInput");
-    const box2 = document.getElementById("descriptionInput");
-    box1.value = "";
-    box2.value = "";
-  };
-
   packagesData.unshift(newPackage);
   packagesCard();
-  reset();
+  packageForm.reset();
 });
 
 const overviewForm = document.querySelector("#reposForm");
@@ -215,17 +196,12 @@ document.addEventListener("submit", (e) => {
     tags: [],
   };
 
-  const reset = () => {
-    const box1 = document.getElementById("titleInput");
-    const box2 = document.getElementById("descriptionInput");
-    box1.value = "";
-    box2.value = "";
-  };
-
   reposData.unshift(newRepo);
   overviewCardsOnDom();
-  reset();
+  overviewForm.reset();
 });
+
+
 
 const profileCard = () => {
   let domString = `<div class="card" style="width: 18rem;">

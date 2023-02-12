@@ -134,16 +134,22 @@ document.addEventListener("submit", (e) => {
 
   const newProject = {
     id: projectsData.length + 1,
-    title: newTitle,
-    description: newDescription,
+    title: newTitle.value,
+    description: newDescription.value,
     visibility: "private",
   };
+
+  const reset = () => {
+    const box1 = document.getElementById("titleInput");
+    const box2 = document.getElementById("descriptionInput");
+    box1.value = "";
+    box2.value = "";
+  }
+
   projectsData.unshift(newProject);
   projectsCard();
-  form.reset();
-});
-
-
+  reset();
+}); 
 
 
 const profileCard = () => {

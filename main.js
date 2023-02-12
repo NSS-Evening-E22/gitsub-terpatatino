@@ -201,6 +201,32 @@ document.addEventListener("submit", (e) => {
   reset();
 });
 
+const overviewForm = document.querySelector("#reposForm");
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newTitle = document.querySelector("#titleInput");
+  const newDescription = document.querySelector("#descriptionInput");
+
+  const newRepo = {
+    id: projectsData.length + 1,
+    title: newTitle.value,
+    description: newDescription.value,
+    tags: [],
+  };
+
+  const reset = () => {
+    const box1 = document.getElementById("titleInput");
+    const box2 = document.getElementById("descriptionInput");
+    box1.value = "";
+    box2.value = "";
+  };
+
+  reposData.unshift(newRepo);
+  overviewCardsOnDom();
+  reset();
+});
+
 const profileCard = () => {
   let domString = `<div class="card" style="width: 18rem;">
   <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" class="card-img-top" alt="..." id='profileCardImg'>

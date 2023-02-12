@@ -124,8 +124,7 @@ window.addEventListener("load", function () {
   }
 });
 
-//ISSUES: cards return "null", form.reset(); returns console error "Uncaught TypeError: form.reset is not a function at HTMLDocument.<anonymous> (main.js:143:8)"
-const form = document.querySelector("#newProjectForm");
+const projectForm = document.querySelector("#newProjectForm");
 document.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -144,13 +143,63 @@ document.addEventListener("submit", (e) => {
     const box2 = document.getElementById("descriptionInput");
     box1.value = "";
     box2.value = "";
-  }
+  };
 
   projectsData.unshift(newProject);
   projectsCard();
   reset();
-}); 
+});
 
+const repoForm = document.querySelector("#newRepoForm");
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newTitle = document.querySelector("#titleInput");
+  const newDescription = document.querySelector("#descriptionInput");
+
+  const newRepo = {
+    id: projectsData.length + 1,
+    title: newTitle.value,
+    description: newDescription.value,
+    tags: [],
+  };
+
+  const reset = () => {
+    const box1 = document.getElementById("titleInput");
+    const box2 = document.getElementById("descriptionInput");
+    box1.value = "";
+    box2.value = "";
+  };
+
+  reposData.unshift(newRepo);
+  repoCardsOnDom();
+  reset();
+});
+
+const packageForm = document.querySelector("#newPackageForm");
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newTitle = document.querySelector("#titleInput");
+  const newDescription = document.querySelector("#descriptionInput");
+
+  const newPackage = {
+    id: projectsData.length + 1,
+    title: newTitle.value,
+    description: newDescription.value,
+  };
+
+  const reset = () => {
+    const box1 = document.getElementById("titleInput");
+    const box2 = document.getElementById("descriptionInput");
+    box1.value = "";
+    box2.value = "";
+  };
+
+  packagesData.unshift(newPackage);
+  packagesCard();
+  reset();
+});
 
 const profileCard = () => {
   let domString = `<div class="card" style="width: 18rem;">

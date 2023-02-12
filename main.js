@@ -126,7 +126,7 @@ window.addEventListener("load", function () {
 
 
 
-const projectForm = document.querySelector("#newProjectForm");
+const projectForm = document.querySelector("#projectForm");
 document.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -145,7 +145,7 @@ document.addEventListener("submit", (e) => {
   projectForm.reset();
 });
 
-const repoForm = document.querySelector("#newRepoForm");
+const repoForm = document.querySelector("#reposForm");
 document.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -164,7 +164,7 @@ document.addEventListener("submit", (e) => {
   repoForm.reset();
 });
 
-const packageForm = document.querySelector("#newPackageForm");
+const packageForm = document.querySelector("#packageForm");
 document.addEventListener("submit", (e) => {
   e.preventDefault();
 

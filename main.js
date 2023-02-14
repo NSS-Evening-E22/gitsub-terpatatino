@@ -1,6 +1,5 @@
 import { packagesData, reposData, projectsData } from "./referenceData.js";
 
-//render to dom function
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
@@ -35,7 +34,6 @@ const navbar = () => {
     </div>
   </div>
 </nav>`;
-
   renderToDom("#navBar", domString);
 };
 
@@ -107,7 +105,6 @@ window.addEventListener("load", function () {
 const overviewCardsOnDom = () => {
   let domString = "";
   for (const repo of reposData) {
-
     domString += `<div class="card text-bg-dark mb-3">
     <div class="card-title">"${repo.title}"</div>
     <div class="card-body">
@@ -124,8 +121,6 @@ window.addEventListener("load", function () {
     overviewCardsOnDom();
   }
 });
-
-
 
 const projectForm = document.querySelector("#projectForm");
 document.addEventListener("submit", (e) => {
@@ -201,8 +196,6 @@ document.addEventListener("submit", (e) => {
   overviewCardsOnDom();
   overviewForm.reset();
 });
-
-
 
 const profileCard = () => {
   let domString = `<div class="card">
@@ -306,11 +299,8 @@ const footer = () => {
 const startApp = () => {
   navbar();
   profileCard();
+  overviewCardsOnDom();
   footer();
 };
 
 startApp();
-
-
-
-// style="width: 18rem;"

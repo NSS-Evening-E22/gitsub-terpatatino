@@ -1,5 +1,4 @@
-
-import { packagesData, reposData, projectsData} from "./referenceData.js";
+import { packagesData, reposData, projectsData } from "./referenceData.js";
 
 //render to dom function
 const renderToDom = (divId, textToRender) => {
@@ -43,7 +42,7 @@ const navbar = () => {
 const packagesCard = () => {
   let domString = "";
   packagesData.forEach((currentPackage) => {
-  domString += `
+    domString += `
   
   <div class="card">
     <div class="card-header">
@@ -55,7 +54,7 @@ const packagesCard = () => {
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>`;
-    });
+  });
   renderToDom("#existingPackages", domString);
 };
 
@@ -67,10 +66,11 @@ window.addEventListener("load", function () {
 
 const projectsCard = () => {
   let domString = "";
-  projectsData.forEach((currentProject) => {
+  projectsData.forEach((project) => {
     domString += `<div class="card">
     <div class="card-body">
-      This is some text within a card body.
+    <h5 class="card-title">"${project.title}"</h5>
+    <p class="card-text">"${project.description}"</p>
     </div>
   </div>`;
   });
@@ -105,8 +105,9 @@ window.addEventListener("load", function () {
 });
 
 const overviewCardsOnDom = () => {
-  let domString = ""
+  let domString = "";
   for (const repo of reposData) {
+
     domString += `<div class="card text-bg-dark mb-3">
     <div class="card-title">"${repo.title}"</div>
     <div class="card-body">
@@ -115,14 +116,93 @@ const overviewCardsOnDom = () => {
     </div>
   </div>`;
   }
-  renderToDom('#pinnedRepos', domString)
-}
+  renderToDom("#pinnedRepos", domString);
+};
 
 window.addEventListener("load", function () {
   if (window.location.pathname === "/index.html") {
     overviewCardsOnDom();
   }
 });
+
+
+
+const projectForm = document.querySelector("#projectForm");
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newTitle = document.querySelector("#titleInput");
+  const newDescription = document.querySelector("#descriptionInput");
+
+  const newProject = {
+    id: projectsData.length + 1,
+    title: newTitle.value,
+    description: newDescription.value,
+    visibility: "private",
+  };
+
+  projectsData.unshift(newProject);
+  projectsCard();
+  projectForm.reset();
+});
+
+const repoForm = document.querySelector("#reposForm");
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newTitle = document.querySelector("#titleInput");
+  const newDescription = document.querySelector("#descriptionInput");
+
+  const newRepo = {
+    id: projectsData.length + 1,
+    title: newTitle.value,
+    description: newDescription.value,
+    tags: [],
+  };
+
+  reposData.unshift(newRepo);
+  repoCardsOnDom();
+  repoForm.reset();
+});
+
+const packageForm = document.querySelector("#packageForm");
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newTitle = document.querySelector("#titleInput");
+  const newDescription = document.querySelector("#descriptionInput");
+
+  const newPackage = {
+    id: projectsData.length + 1,
+    title: newTitle.value,
+    description: newDescription.value,
+  };
+
+  packagesData.unshift(newPackage);
+  packagesCard();
+  packageForm.reset();
+});
+
+const overviewForm = document.querySelector("#reposForm");
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newTitle = document.querySelector("#titleInput");
+  const newDescription = document.querySelector("#descriptionInput");
+
+  const newRepo = {
+    id: projectsData.length + 1,
+    title: newTitle.value,
+    description: newDescription.value,
+    tags: [],
+  };
+
+  reposData.unshift(newRepo);
+  overviewCardsOnDom();
+  overviewForm.reset();
+});
+
+
 
 const profileCard = () => {
   let domString = `<div class="card">
@@ -171,8 +251,8 @@ const profileCard = () => {
         </div>
     </li>
   </ul>
-</div>`
-renderToDom('#profile', domString)
+</div>`;
+  renderToDom("#profile", domString);
 };
 
 const footer = () => {

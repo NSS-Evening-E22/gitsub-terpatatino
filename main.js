@@ -87,10 +87,10 @@ const repoCardsOnDom = () => {
   let domString = "";
   for (const repo of reposData) {
     domString += `<div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-    <div class="card-header">"${repo.title}"</div>
+    <div class="card-title">"${repo.title}"</div>
     <div class="card-body">
-      <h5 class="card-title">"${repo.tags}"</h5>
-      <p class="card-text">"${repo.description}"</p>
+      <h5 class="card-description">"${repo.description}"</h5>
+      <p class="card-tags">"${repo.tags}"</p>
     </div>
   </div>`;
   }
@@ -107,12 +107,13 @@ window.addEventListener("load", function () {
 const overviewCardsOnDom = () => {
   let domString = "";
   for (const repo of reposData) {
-    domString += `<div class="card" style="width: 18rem;" id='pinnedRepoCard'>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">${repo.title}</li>
-      <li class="list-group-item">${repo.description}</li>
-      <li class="list-group-item">${repo.tags}</li>
-    </ul>
+
+    domString += `<div class="card text-bg-dark mb-3">
+    <div class="card-title">"${repo.title}"</div>
+    <div class="card-body">
+      <h5 class="card-description">"${repo.description}"</h5>
+      <p class="card-tags">"${repo.tags}"</p>
+    </div>
   </div>`;
   }
   renderToDom("#pinnedRepos", domString);
@@ -204,10 +205,10 @@ document.addEventListener("submit", (e) => {
 
 
 const profileCard = () => {
-  let domString = `<div class="card" style="width: 18rem;">
+  let domString = `<div class="card">
   <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" class="card-img-top" alt="..." id='profileCardImg'>
   <div class="card-body">
-    <h5 class="card-title">John Johnson</h5>
+    <h5 class="profile-card-title">John Johnson</h5>
     <p class="card-text">Hello im John, a highly motivated individual coupled with strong technical abilities.</p>
     <button id="profileBtn">Follow</button> <button id="profileBtn">Sponsor</button>
       <div id="pf-stats">
@@ -309,3 +310,7 @@ const startApp = () => {
 };
 
 startApp();
+
+
+
+// style="width: 18rem;"

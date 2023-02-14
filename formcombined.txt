@@ -1,0 +1,40 @@
+const resetForm = () => {
+  const titleInput = document.getElementById("titleInput");
+  const descriptionInput = document.getElementById("descriptionInput");
+  titleInput.value = "";
+  descriptionInput.value = "";
+};
+
+const submitForm = (form, dataArray, dataType, dataCards) => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const titleInput = document.querySelector("#titleInput");
+    const descriptionInput = document.querySelector("#descriptionInput");
+
+    const newData = {
+      id: dataArray.length + 1,
+      title: titleInput.value,
+      description: descriptionInput.value,
+    };
+
+    if (dataType === "project") {
+      newData.visibility = "private";
+    } else if (dataType === "repo") {
+      newData.tags = [];
+    }
+
+    dataArray.unshift(newData);
+    dataCards();
+    resetForm();
+  });
+};
+
+const projectForm = document.querySelector("#newProjectForm");
+submitForm(projectForm, projectsData, "project", projectsCard);
+
+const repoForm = document.querySelector("#newRepoForm");
+submitForm(repoForm, reposData, "repo", repoCardsOnDom);
+
+const packageForm = document.querySelector("#newPackageForm");
+submitForm(packageForm, packagesData, "package", packagesCard);

@@ -1,7 +1,28 @@
 body {
   background-color: rgb(38, 48, 48);
 }
+
+/* navbar */
+
+#navBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+
  /* this area bellow is all profile card styling */
+
+#profile {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 50px;
+  height: 1000px;
+  width: 300px;
+
+}
+
+
 #profileBtn {
 
 }
@@ -38,8 +59,68 @@ body {
   border-radius: 25px;
 }
 
+#pageContent {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+}
+
   /* this area above is all profile card styling */
 
   #pinnedTitle {
     color: white;
+    margin-left: 20px;
+    margin-top: 50px;
   }
+
+  #pinnedRepos {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    
+  }
+
+  #pinnedRepos > div {
+    margin: 2rem;
+    }
+
+  #content-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  #newProjectForm {
+    margin-left: 20px;
+
+  }
+
+  #project-form-title {
+    color: white;
+    margin-top: 30px;
+  }
+
+  .form-label {
+    color: white;
+  }
+
+  #footer {
+    margin-top: 150px;
+  }
+
+
+/* card styling */
+
+.card-title {
+  font-size: 30px;
+  color: blue;
+}
+
+.card-description {
+  font-size: 20px;
+}
+
+.card-tags {
+  font-size: 15px;
+  color: grey;
+}

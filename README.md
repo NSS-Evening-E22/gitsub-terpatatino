@@ -17,6 +17,8 @@ Developers building public profiles and keeping track of ongoing development pro
 - Repositories - Shows the users added repositories and allows for adding to repositories
 - Projects - Shows the projects the user is a part of and allows for adding more packages
 
+![Overview Screenshot](https://drive.google.com/file/d/1pMBOTU66iedMQsYQRvKskNm0-zWQr6Cu/view?usp=share_link)
+
 ## CONTRIBUTORS
 - Brandon Highland - https://github.com/bhighlander
 - Tori Patricia - https://github.com/toripatricia

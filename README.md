@@ -21,5 +21,5 @@ Developers building public profiles and keeping track of ongoing development pro
 - Brandon Highland - https://github.com/bhighlander
 - Tori Patricia - https://github.com/toripatricia
 - Mark Brewer - https://github.com/markbrew3
-- Dustin Mansell - 
+- Dustin Mansell - https://github.com/Demansell
 - Jackson Frazier - https://github.com/Freelance-Bum
